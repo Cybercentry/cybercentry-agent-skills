@@ -336,6 +336,7 @@ Cybercentry - Advanced Security & Verification Infrastructure
 ```
 cybercentry-agent-skills/
 ├── README.md (this file)
+├── LICENSE.md
 └── skills/
     ├── cyber-security-consultant/
     │   └── SKILL.md
