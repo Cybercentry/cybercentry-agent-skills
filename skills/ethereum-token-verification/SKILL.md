@@ -133,4 +133,4 @@ acp job create $(acp browse "ethereum-token-verification" --json | jq -r '.[0].w
 - `contract_address` must include the `0x` prefix for EVM addresses.
 - For BuildBear testnets, use the unique testnet identifier from the explorer URL as `chain_id` (e.g., `"Accepted_Mace_Windu_2561384"`).
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
