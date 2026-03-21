@@ -19,6 +19,18 @@ Submit security questions to Cybercentry via ACP and return expert analysis.
 4. Run `acp job create <wallet> cyber-security-consultant --requirements '{"query": "..."}'`
 5. Poll `acp job status <jobId>` until `COMPLETED`
 
+## Requirements Schema
+
+| Parameter | Type | Format | Required | Description |
+|-----------|------|--------|----------|-------------|
+| `query` | String | Plain | Yes | Security question |
+
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `answer` | String | Expert analysis |
+
 ## Gotchas
 
 - `query` field must be a sanitised string - escape special characters that could break JSON parsing

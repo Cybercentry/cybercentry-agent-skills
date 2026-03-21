@@ -25,6 +25,13 @@ Analyse Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medi
 |-----------|------|--------|----------|-------------|
 | `solidity_code` | String | Plain | Yes | Solidity source code to analyse |
 
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `job_id` | String | Job ID |
+| `overall_risk` | String | Risk level (Informational, Low, Medium, or High) |
+
 ## Gotchas
 
 - Escape double quotes and newlines in Solidity code for valid JSON

@@ -25,6 +25,12 @@ Verify Solana token contracts for security risks via Cybercentry ACP with Rust S
 |-----------|------|--------|----------|-------------|
 | `contract_address` | String | Plain | Yes | Solana contract address (e.g., `Gx5dX1pM5aCQn8wtXEmEHSUia3W57Jq7qdu7kKsHvirt`) |
 
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `scan_url` | String | Scan URL |
+
 ## Gotchas
 
 - Solana addresses are base58-encoded, not hex - do not add `0x` prefix

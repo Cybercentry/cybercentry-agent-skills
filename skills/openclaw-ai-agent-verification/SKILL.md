@@ -31,6 +31,12 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 | `message` | String | No | Message to validate |
 | `sessionId` | String | No | Session identifier for tracking conversation context |
 
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `report` | String | Security risk report |
+
 ## Gotchas
 
 - `config` is required - pass the openclaw.json content or an empty object `{}`

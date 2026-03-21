@@ -25,6 +25,12 @@ Blockchain forensics for wallet addresses via Cybercentry ACP. Traces funding ch
 |-----------|------|--------|----------|-------------|
 | `wallet_address` | String | Plain | Yes | EVM wallet address with `0x` prefix |
 
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `report` | String | Forensics report |
+
 ## Gotchas
 
 - `wallet_address` must include the `0x` prefix for EVM addresses

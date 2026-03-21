@@ -107,6 +107,12 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 | zksync | 47 |
 | moonscan | 48 |
 
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `scan_url` | String | Scan URL |
+
 ## Gotchas
 
 - `chain_id` and `platform_id` are numbers, not strings - do not quote them

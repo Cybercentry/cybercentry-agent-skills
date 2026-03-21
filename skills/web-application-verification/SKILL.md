@@ -25,6 +25,12 @@ OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS,
 |-----------|------|--------|----------|-------------|
 | `target_url` | String | Plain | Yes | Target URL including protocol (e.g., `https://example.com`) |
 
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `report_url` | String | Security report URL |
+
 ## Gotchas
 
 - `target_url` must include the protocol (`https://` or `http://`)

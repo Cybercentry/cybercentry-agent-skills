@@ -21,11 +21,17 @@ Encrypt data with quantum-resistant AES-256-GCM via Cybercentry ACP. Returns rec
 
 ## Requirements Schema
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `cqcv_data` | String | Yes | Data to encrypt with quantum-resistant cryptography |
+| Parameter | Type | Format | Required | Description |
+|-----------|------|--------|----------|-------------|
+| `cqcv_data` | String | Plain | Yes | Data to encrypt |
+
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `record_id` | String | Unique record identifier |
+| `decrypt_url` | String | Secure URL for data retrieval |
 
 ## Gotchas
 
 - `cqcv_data` must be a plain string - escape special characters that could break JSON parsing
-- Deliverable contains `record_id` and `decrypt_url` for future data retrieval

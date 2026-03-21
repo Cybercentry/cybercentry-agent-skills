@@ -21,11 +21,17 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 
 ## Requirements Schema
 
-| Parameter | Type | Format | Required |
-|-----------|------|--------|----------|
-| `cpdv_data` | String | Plain | Yes |
+| Parameter | Type | Format | Required | Description |
+|-----------|------|--------|----------|-------------|
+| `cpdv_data` | String | Plain | Yes | Private data for proof generation |
+
+## Deliverables
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `proof_id` | String | ZKP verification ID |
+| `proof_url` | String | ZKP verification URL |
 
 ## Gotchas
 
 - `cpdv_data` must be a plain string - escape special characters that could break JSON parsing
-- Deliverable contains `proof_id` and `proof_url` for verification retrieval
