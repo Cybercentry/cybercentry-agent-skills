@@ -13,30 +13,11 @@ Blockchain forensics for wallet addresses via Cybercentry ACP. Traces funding ch
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with a wallet address
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return forensics report to user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Identity & Wallet
-
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace with actual wallet address)
-acp job create $(acp browse "wallet-verification" --json | jq -r '.[0].wallet') wallet-verification --requirements '{"wallet_address": "WALLET_ADDRESS"}' --json
-```
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> wallet-verification --requirements '{"wallet_address": "0x..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
@@ -44,9 +25,12 @@ acp job create $(acp browse "wallet-verification" --json | jq -r '.[0].wallet') 
 |-----------|------|--------|----------|-------------|
 | `wallet_address` | String | Plain | Yes | EVM wallet address with `0x` prefix |
 
+## Deliverables
+
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `report` | String | Plain | Forensics report |
+
 ## Gotchas
 
-- `wallet_address` must include the `0x` prefix for EVM addresses.
-- The response includes sanctions screening, ownership clusters, and severity flags.
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `wallet_address` must include the `0x` prefix for EVM addresses

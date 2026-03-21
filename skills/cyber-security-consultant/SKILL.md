@@ -13,34 +13,24 @@ Submit security questions to Cybercentry via ACP and return expert analysis.
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed (if not, run setup)
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with the user's security question
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return result to user
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> cyber-security-consultant --requirements '{"query": "..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
-## 1. Environment Setup
+## Requirements Schema
 
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
+| Parameter | Type | Format | Required | Description |
+|-----------|------|--------|----------|-------------|
+| `query` | String | Plain | Yes | Security question |
 
-## 2. Identity & Wallet
+## Deliverables
 
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace USER_QUESTION with sanitised query)
-acp job create $(acp browse "cyber-security-consultant" --json | jq -r '.[0].wallet') cyber-security-consultant --requirements '{"query": "USER_QUESTION"}' --json
-```
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `answer` | String | Plain | Expert analysis |
 
 ## Gotchas
 
-- The `query` field must be a sanitised string. Remove any special characters that could break JSON parsing.
-- Always use `--json` flag for machine-readable output. Parse the `jobId` from the create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
-- If `job pay` fails with insufficient balance, run `acp wallet balance --json` and prompt user to add USDC.
+- `query` field must be a sanitised string - escape special characters that could break JSON parsing

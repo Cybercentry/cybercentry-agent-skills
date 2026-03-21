@@ -13,31 +13,11 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Look up platform_id and chain_id from tables below
-- [ ] Step 4: Create a job with contract details
-- [ ] Step 5: Pay for the job
-- [ ] Step 6: Poll status until COMPLETED
-- [ ] Step 7: Return result to user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Identity & Wallet
-
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace values with actual chain_id, platform_id, contract_address)
-acp job create $(acp browse "ethereum-token-verification" --json | jq -r '.[0].wallet') ethereum-token-verification --requirements '{"chain_id": CHAIN_ID, "platform_id": PLATFORM_ID, "contract_address": "CONTRACT_ADDRESS"}' --json
-```
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> ethereum-token-verification --requirements '{"chain_id": 1, "platform_id": 1, "contract_address": "0x..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
@@ -127,10 +107,13 @@ acp job create $(acp browse "ethereum-token-verification" --json | jq -r '.[0].w
 | zksync | 47 |
 | moonscan | 48 |
 
+## Deliverables
+
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `scan_url` | String | Plain | Scan URL |
+
 ## Gotchas
 
-- `chain_id` and `platform_id` are numbers, not strings. Do not quote them in the JSON.
-- `contract_address` must include the `0x` prefix for EVM addresses.
-- For BuildBear testnets, use the unique testnet identifier from the explorer URL as `chain_id` (e.g., `"Accepted_Mace_Windu_2561384"`).
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `chain_id` and `platform_id` are numbers, not strings - do not quote them
+- `contract_address` must include the `0x` prefix

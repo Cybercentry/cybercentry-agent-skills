@@ -13,40 +13,25 @@ Encrypt data with quantum-resistant AES-256-GCM via Cybercentry ACP. Returns rec
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with data to encrypt
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return record_id and decrypt_url to the user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Identity & Wallet
-
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace USER_DATA with data to encrypt)
-acp job create $(acp browse "quantum-cryptography-verification" --json | jq -r '.[0].wallet') quantum-cryptography-verification --requirements '{"cqcv_data": "USER_DATA"}' --json
-```
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> quantum-cryptography-verification --requirements '{"cqcv_data": "..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `cqcv_data` | String | Yes | Data to encrypt with quantum-resistant cryptography |
+| Parameter | Type | Format | Required | Description |
+|-----------|------|--------|----------|-------------|
+| `cqcv_data` | String | Plain | Yes | Data to encrypt |
+
+## Deliverables
+
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `record_id` | String | Plain | Unique record identifier |
+| `decrypt_url` | String | Plain | Secure URL for data retrieval |
 
 ## Gotchas
 
-- `cqcv_data` must be a plain string. Escape special characters that could break JSON parsing.
-- The response contains `record_id` and `decrypt_url` for future data retrieval.
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `cqcv_data` must be a plain string - escape special characters that could break JSON parsing

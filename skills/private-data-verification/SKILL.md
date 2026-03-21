@@ -13,40 +13,25 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with private data
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return proof_id and proof_url to the user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Identity & Wallet
-
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace YOUR_PRIVATE_DATA with actual data)
-acp job create $(acp browse "private-data-verification" --json | jq -r '.[0].wallet') private-data-verification --requirements '{"cpdv_data": "YOUR_PRIVATE_DATA"}' --json
-```
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> private-data-verification --requirements '{"cpdv_data": "..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
-| Parameter | Type | Format | Required |
-|-----------|------|--------|----------|
-| `cpdv_data` | String | Plain | Yes |
+| Parameter | Type | Format | Required | Description |
+|-----------|------|--------|----------|-------------|
+| `cpdv_data` | String | Plain | Yes | Private data for proof generation |
+
+## Deliverables
+
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `proof_id` | String | Plain | ZKP verification ID |
+| `proof_url` | String | Plain | ZKP verification URL |
 
 ## Gotchas
 
-- `cpdv_data` must be a plain string. Escape special characters that could break JSON parsing.
-- The response contains `proof_id` and `proof_url` for verification retrieval.
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `cpdv_data` must be a plain string - escape special characters that could break JSON parsing

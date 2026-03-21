@@ -13,40 +13,27 @@ Analyse Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medi
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with Solidity code
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED (typically < 2 minutes)
-- [ ] Step 6: Return risk assessment to the user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Identity & Wallet
-
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace SOLIDITY_CODE with actual code)
-acp job create $(acp browse "solidity-code-verification" --json | jq -r '.[0].wallet') solidity-code-verification --requirements '{"solidity_code": "SOLIDITY_CODE"}' --json
-```
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> solidity-code-verification --requirements '{"solidity_code": "..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
 | Parameter | Type | Format | Required | Description |
 |-----------|------|--------|----------|-------------|
-| `solidity_code` | String | Plain | Yes | Solidity source code to analyze |
+| `solidity_code` | String | Plain | Yes | Solidity source code to analyse |
+
+## Deliverables
+
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `job_id` | String | Plain | Job ID |
+| `overall_risk` | String | Plain | Risk level (Informational, Low, Medium, or High) |
 
 ## Gotchas
 
-- Escape double quotes and newlines in the Solidity code for valid JSON.
-- For multi-file contracts, concatenate all files into a single string.
-- Execution time averages under 5 minutes. Poll every 10 seconds for this job.
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
+- Escape double quotes and newlines in Solidity code for valid JSON
+- For multi-file contracts, concatenate all files into a single string
+- Execution time typically < 2 minutes but can take up to 5 minutes

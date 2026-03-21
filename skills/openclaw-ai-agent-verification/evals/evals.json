@@ -3,32 +3,52 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Before I deploy this AI agent, can you check if its configuration is secure? It has file system access and can execute shell commands.",
-      "expected_output": "Security audit of the agent configuration with risk level and specific vulnerabilities identified.",
+      "prompt": "Audit AI agent with file access and shell commands",
+      "requirements": {
+        "tool": {
+          "name": "execute_trade",
+          "args": {}
+        },
+        "config": {}
+      },
+      "expected_output": "Security risk report",
       "assertions": [
-        "The response includes a risk level (Critical/High/Medium/Low)",
-        "File system access risks are evaluated",
-        "Shell command execution risks are flagged"
+        "report field is present",
+        "Risk assessment provided"
       ]
     },
     {
       "id": 2,
-      "prompt": "Is this agent safe to run? Config: {\"sandboxing\": false, \"dm_policy\": \"open\", \"tools\": [\"shell\", \"filesystem\"]}",
-      "expected_output": "Risk assessment highlighting disabled sandboxing and open DM policy as high-risk configurations.",
+      "prompt": "Check agent configuration security",
+      "requirements": {
+        "tool": {
+          "name": "access_database",
+          "args": {}
+        },
+        "config": {},
+        "skills": "[]"
+      },
+      "expected_output": "Security risk report",
       "assertions": [
-        "Disabled sandboxing is flagged as a risk",
-        "Open DM policy is identified as a vulnerability",
-        "Elevated tool permissions are noted"
+        "report field is present",
+        "Configuration analysed"
       ]
     },
     {
       "id": 3,
-      "prompt": "Audit this agent's skills file for prompt injection vulnerabilities",
-      "expected_output": "Analysis of skills content for prompt injection patterns and unsafe instruction handling.",
+      "prompt": "Verify agent for prompt injection vulnerabilities",
+      "requirements": {
+        "tool": {
+          "name": "process_user_input",
+          "args": {}
+        },
+        "config": {},
+        "message": "User provided message"
+      },
+      "expected_output": "Security risk report",
       "assertions": [
-        "Prompt injection patterns are checked",
-        "Specific vulnerabilities are identified if present",
-        "Remediation guidance is provided"
+        "report field is present",
+        "Security check completed"
       ]
     }
   ]

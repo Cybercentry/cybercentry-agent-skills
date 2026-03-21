@@ -3,32 +3,44 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Can you check if this token is safe to buy? Contract: 0x1234567890abcdef1234567890abcdef12345678 on Ethereum mainnet",
-      "expected_output": "Security analysis of the token contract including rug pull risk, tax analysis, and liquidity assessment.",
+      "prompt": "Verify USDC token on Ethereum mainnet",
+      "requirements": {
+        "chain_id": 1,
+        "platform_id": 1,
+        "contract_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      },
+      "expected_output": "Scan URL",
       "assertions": [
-        "The response includes a risk level assessment",
-        "Rug pull indicators are analyzed",
-        "Hidden tax mechanisms are checked"
+        "scan_url field is present",
+        "Result is accessible"
       ]
     },
     {
       "id": 2,
-      "prompt": "I found a new memecoin on Base chain, contract 0xabcdef1234567890abcdef1234567890abcdef12. Is it a scam?",
-      "expected_output": "Due diligence report on the Base chain token with scam indicators and holder distribution analysis.",
+      "prompt": "Check token on Polygon chain",
+      "requirements": {
+        "chain_id": 137,
+        "platform_id": 3,
+        "contract_address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
+      },
+      "expected_output": "Scan URL",
       "assertions": [
-        "The response identifies the correct chain (Base)",
-        "Scam indicators are evaluated",
-        "Holder distribution is analyzed"
+        "scan_url field is present",
+        "Polygon chain is correctly identified"
       ]
     },
     {
       "id": 3,
-      "prompt": "Verify this BSC token for me: 0x9876543210fedcba9876543210fedcba98765432",
-      "expected_output": "Security scan of the BNB Chain token with vulnerability findings and liquidity legitimacy check.",
+      "prompt": "Scan BSC token for security",
+      "requirements": {
+        "chain_id": 56,
+        "platform_id": 2,
+        "contract_address": "0x0000000000000000000000000000000000000000"
+      },
+      "expected_output": "Scan URL",
       "assertions": [
-        "The response uses the correct chain (BSC/BNB Chain)",
-        "Contract vulnerabilities are assessed",
-        "Liquidity pool legitimacy is evaluated"
+        "scan_url field is present",
+        "Analysis completed"
       ]
     }
   ]

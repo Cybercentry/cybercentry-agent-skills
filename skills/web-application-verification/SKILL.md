@@ -13,30 +13,11 @@ OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS,
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with the target URL
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return security report to user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Identity & Wallet
-
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
-
-## 3. Job Execution
-
-```bash
-# Create job (replace with actual target URL)
-acp job create $(acp browse "web-application-verification" --json | jq -r '.[0].wallet') web-application-verification --requirements '{"target_url": "TARGET_URL"}' --json
-```
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> web-application-verification --requirements '{"target_url": "https://..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
@@ -44,9 +25,13 @@ acp job create $(acp browse "web-application-verification" --json | jq -r '.[0].
 |-----------|------|--------|----------|-------------|
 | `target_url` | String | Plain | Yes | Target URL including protocol (e.g., `https://example.com`) |
 
+## Deliverables
+
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `report_url` | String | Plain | Security report URL |
+
 ## Gotchas
 
-- `target_url` must include the protocol (`https://` or `http://`).
-- The URL must be publicly accessible for scanning.
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `target_url` must include the protocol (`https://` or `http://`)
+- URL must be publicly accessible for scanning
