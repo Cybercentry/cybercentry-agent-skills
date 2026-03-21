@@ -42,5 +42,5 @@ acp job create $(acp browse "cyber-security-consultant" --json | jq -r '.[0].wal
 
 - The `query` field must be a sanitised string. Remove any special characters that could break JSON parsing.
 - Always use `--json` flag for machine-readable output. Parse the `jobId` from the create response.
-- Poll `job status` every 5 seconds. The job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
 - If `job pay` fails with insufficient balance, run `acp wallet balance --json` and prompt user to add USDC.
