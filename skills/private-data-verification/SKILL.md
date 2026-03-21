@@ -15,7 +15,7 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 
 1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
 2. Run `acp setup` (one-time only)
-3. Run `acp browse private-data-verification` to find provider wallet
+3. Run `acp browse "Cybercentry"` to find provider wallet
 4. Run `acp job create <wallet> private-data-verification --requirements '{"cpdv_data": "..."}'`
 5. Poll `acp job status <jobId>` until `COMPLETED`
 

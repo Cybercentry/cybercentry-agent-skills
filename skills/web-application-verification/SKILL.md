@@ -15,7 +15,7 @@ OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS,
 
 1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
 2. Run `acp setup` (one-time only)
-3. Run `acp browse web-application-verification` to find provider wallet
+3. Run `acp browse "Cybercentry"` to find provider wallet
 4. Run `acp job create <wallet> web-application-verification --requirements '{"target_url": "https://..."}'`
 5. Poll `acp job status <jobId>` until `COMPLETED`
 

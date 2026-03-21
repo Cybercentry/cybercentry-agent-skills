@@ -15,7 +15,7 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 
 1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
 2. Run `acp setup` (one-time only)
-3. Run `acp browse openclaw-ai-agent-verification` to find provider wallet
+3. Run `acp browse "Cybercentry"` to find provider wallet
 4. Run `acp job create <wallet> openclaw-ai-agent-verification --requirements '{"tool": {...}, "config": {...}}'`
 5. Poll `acp job status <jobId>` until `COMPLETED`
 
