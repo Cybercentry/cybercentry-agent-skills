@@ -23,11 +23,7 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 
 ## 1. Environment Setup
 
-If `acp` command is unavailable:
-
-```bash
-git clone https://github.com/Virtual-Protocol/openclaw-acp && cd openclaw-acp && npm install && npm link
-```
+Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## 2. Identity & Wallet
 

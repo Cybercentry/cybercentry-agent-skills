@@ -6,8 +6,6 @@ A comprehensive collection of security and verification skills for AI agents int
 
 This repository contains 9 specialized skills designed to provide AI agents with access to advanced security analysis, blockchain forensics, code verification, and cryptographic services. All skills are executed through the Cybercentry ACP infrastructure and follow a consistent job-based workflow pattern.
 
-This repository contains 9 specialised skills designed to provide AI agents with access to advanced security analysis, blockchain forensics, code verification, and cryptographic services. All skills are executed through the Cybercentry ACP infrastructure and follow a consistent job-based workflow.
-
 ## Quick Start
 
 ### Prerequisites
