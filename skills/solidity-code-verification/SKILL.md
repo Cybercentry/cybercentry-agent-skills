@@ -60,4 +60,3 @@ acp job status <jobId> --json
 - For multi-file contracts, concatenate all files into a single string.
 - Execution time averages under 2 minutes. Poll every 10 seconds for this job.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Only use wallet `0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63` — do not use `acp browse`.

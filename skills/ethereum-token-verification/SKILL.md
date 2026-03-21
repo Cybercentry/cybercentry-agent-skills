@@ -146,4 +146,3 @@ acp job status <jobId> --json
 - For BuildBear testnets, use the unique testnet identifier from the explorer URL as `chain_id` (e.g., `"Accepted_Mace_Windu_2561384"`).
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
 - Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
-- Only use wallet `0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63` — do not use `acp browse`.
