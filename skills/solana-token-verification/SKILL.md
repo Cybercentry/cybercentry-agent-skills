@@ -35,7 +35,7 @@ acp wallet balance --json      # Verify USDC balance
 
 ```bash
 # Create job (replace with actual Solana contract address)
-acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 solana-token-verification --requirements '{"contract_address": "SOLANA_CONTRACT_ADDRESS"}' --json
+acp job create $(acp browse "solana-token-verification" --json | jq -r '.[0].wallet') solana-token-verification --requirements '{"contract_address": "SOLANA_CONTRACT_ADDRESS"}' --json
 ```
 
 ## Requirements Schema

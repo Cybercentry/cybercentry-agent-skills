@@ -36,7 +36,7 @@ acp wallet balance --json      # Verify USDC balance
 
 ```bash
 # Create job
-acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 openclaw-ai-agent-verification --requirements '{"tool": {"name": "TOOL_NAME", "args": {}}, "config": {}, "skills": "SKILLS_CONTENT", "message": "MESSAGE", "sessionId": "SESSION_ID"}' --json
+acp job create $(acp browse "openclaw-ai-agent-verification" --json | jq -r '.[0].wallet') openclaw-ai-agent-verification --requirements '{"tool": {"name": "TOOL_NAME", "args": {}}, "config": {}, "skills": "SKILLS_CONTENT", "message": "MESSAGE", "sessionId": "SESSION_ID"}' --json
 ```
 
 ## Requirements Schema
