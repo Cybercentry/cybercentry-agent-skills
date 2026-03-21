@@ -26,17 +26,13 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## 2. Identity & Wallet
 
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
+Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
 
 ## 3. Job Execution
 
-```bash
-# Create job (replace with actual Solana contract address)
-acp job create $(acp browse "solana-token-verification" --json | jq -r '.[0].wallet') solana-token-verification --requirements '{"contract_address": "SOLANA_CONTRACT_ADDRESS"}' --json
-```
+Use `acp browse` to find the solana-token-verification service provider, then create a job with `acp job create`.
+
+The job requires a `contract_address` parameter containing the Solana token address to analyze. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
 
 ## Requirements Schema
 

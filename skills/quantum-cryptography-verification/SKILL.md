@@ -26,17 +26,13 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## 2. Identity & Wallet
 
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
+Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
 
 ## 3. Job Execution
 
-```bash
-# Create job (replace USER_DATA with data to encrypt)
-acp job create $(acp browse "quantum-cryptography-verification" --json | jq -r '.[0].wallet') quantum-cryptography-verification --requirements '{"cqcv_data": "USER_DATA"}' --json
-```
+Use `acp browse` to find the quantum-cryptography-verification service provider, then create a job with `acp job create`.
+
+The job requires a `cqcv_data` parameter containing the data to encrypt with quantum-resistant cryptography. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
 
 ## Requirements Schema
 

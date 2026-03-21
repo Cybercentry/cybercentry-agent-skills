@@ -27,17 +27,13 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## 2. Identity & Wallet
 
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
+Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
 
 ## 3. Job Execution
 
-```bash
-# Create job (replace values with actual chain_id, platform_id, contract_address)
-acp job create $(acp browse "ethereum-token-verification" --json | jq -r '.[0].wallet') ethereum-token-verification --requirements '{"chain_id": CHAIN_ID, "platform_id": PLATFORM_ID, "contract_address": "CONTRACT_ADDRESS"}' --json
-```
+Use `acp browse` to find the ethereum-token-verification service provider, then create a job with `acp job create`.
+
+The job requires `chain_id`, `platform_id`, and `contract_address` parameters. Refer to the tables below for valid chain and platform IDs. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
 
 ## Requirements Schema
 

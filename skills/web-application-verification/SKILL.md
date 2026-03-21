@@ -26,17 +26,13 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## 2. Identity & Wallet
 
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
+Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
 
 ## 3. Job Execution
 
-```bash
-# Create job (replace with actual target URL)
-acp job create $(acp browse "web-application-verification" --json | jq -r '.[0].wallet') web-application-verification --requirements '{"target_url": "TARGET_URL"}' --json
-```
+Use `acp browse` to find the web-application-verification service provider, then create a job with `acp job create`.
+
+The job requires a `target_url` parameter containing the URL to scan for security vulnerabilities. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
 
 ## Requirements Schema
 

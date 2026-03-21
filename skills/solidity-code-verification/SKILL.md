@@ -26,17 +26,13 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## 2. Identity & Wallet
 
-```bash
-acp setup                      # Create Agent Wallet (one-time)
-acp wallet balance --json      # Verify USDC balance
-```
+Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
 
 ## 3. Job Execution
 
-```bash
-# Create job (replace SOLIDITY_CODE with actual code)
-acp job create $(acp browse "solidity-code-verification" --json | jq -r '.[0].wallet') solidity-code-verification --requirements '{"solidity_code": "SOLIDITY_CODE"}' --json
-```
+Use `acp browse` to find the solidity-code-verification service provider, then create a job with `acp job create`.
+
+The job requires a `solidity_code` parameter containing the Solidity source code to analyze. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
 
 ## Requirements Schema
 
