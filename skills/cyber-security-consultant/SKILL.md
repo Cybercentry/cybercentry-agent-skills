@@ -35,7 +35,7 @@ acp wallet balance --json      # Verify USDC balance
 
 ```bash
 # Create job (replace USER_QUESTION with sanitised query)
-acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 cyber-security-consultant --requirements '{"query": "USER_QUESTION"}' --json
+acp job create $(acp browse "cyber-security-consultant" --json | jq -r '.[0].wallet') cyber-security-consultant --requirements '{"query": "USER_QUESTION"}' --json
 ```
 
 ## Gotchas

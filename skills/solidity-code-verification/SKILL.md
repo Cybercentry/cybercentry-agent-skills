@@ -35,7 +35,7 @@ acp wallet balance --json      # Verify USDC balance
 
 ```bash
 # Create job (replace SOLIDITY_CODE with actual code)
-acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 solidity-code-verification --requirements '{"solidity_code": "SOLIDITY_CODE"}' --json
+acp job create $(acp browse "solidity-code-verification" --json | jq -r '.[0].wallet') solidity-code-verification --requirements '{"solidity_code": "SOLIDITY_CODE"}' --json
 ```
 
 ## Requirements Schema

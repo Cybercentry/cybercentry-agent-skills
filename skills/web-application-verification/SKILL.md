@@ -35,13 +35,7 @@ acp wallet balance --json      # Verify USDC balance
 
 ```bash
 # Create job (replace with actual target URL)
-acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 web-application-verification --requirements '{"target_url": "TARGET_URL"}' --json
-
-# Pay for job
-acp job pay <jobId> --accept true --json
-
-# Poll until status is COMPLETED
-acp job status <jobId> --json
+acp job create $(acp browse "web-application-verification" --json | jq -r '.[0].wallet') web-application-verification --requirements '{"target_url": "TARGET_URL"}' --json
 ```
 
 ## Requirements Schema
