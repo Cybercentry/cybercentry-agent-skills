@@ -15,10 +15,10 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 
 - [ ] Step 1: Verify ACP CLI is installed
 - [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create job with private data
-- [ ] Step 4: Pay for job
+- [ ] Step 3: Create a job with private data
+- [ ] Step 4: Pay for the job
 - [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return proof_id and proof_url to user
+- [ ] Step 6: Return proof_id and proof_url to the user
 
 ## 1. Environment Setup
 
@@ -49,4 +49,4 @@ acp job create $(acp browse "private-data-verification" --json | jq -r '.[0].wal
 - `cpdv_data` must be a plain string. Escape special characters that could break JSON parsing.
 - The response contains `proof_id` and `proof_url` for verification retrieval.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
