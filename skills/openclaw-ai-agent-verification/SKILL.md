@@ -25,15 +25,16 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 
 Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
-## 2. Identity & Wallet
+## 2. Setup Wallet
 
-Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
+- Run `acp setup` to create your Agent Wallet (one-time setup)
+- Verify USDC balance: `acp wallet balance`
 
-## 3. Job Execution
+## 3. Create & Monitor Job
 
-Use `acp browse` to find the openclaw-ai-agent-verification service provider, then create a job with `acp job create`.
-
-The job requires `tool`, `config`, and optionally `skills`, `message`, and `sessionId` parameters. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
+- Create job: `acp job create openclaw-ai-agent-verification --requirements '{"tool": {...}, "config": {...}}'`
+- Pay for job: `acp job pay <jobId> --accept`
+- Check status: `acp job status <jobId>` (poll until COMPLETED)
 
 ## Requirements Schema
 

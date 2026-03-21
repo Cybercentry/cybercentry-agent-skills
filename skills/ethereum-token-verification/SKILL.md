@@ -25,15 +25,16 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 
 Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
-## 2. Identity & Wallet
+## 2. Setup Wallet
 
-Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
+- Run `acp setup` to create your Agent Wallet (one-time setup)
+- Verify USDC balance: `acp wallet balance`
 
-## 3. Job Execution
+## 3. Create & Monitor Job
 
-Use `acp browse` to find the ethereum-token-verification service provider, then create a job with `acp job create`.
-
-The job requires `chain_id`, `platform_id`, and `contract_address` parameters. Refer to the tables below for valid chain and platform IDs. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
+- Create job: `acp job create ethereum-token-verification --requirements '{"chain_id": 1, "platform_id": 1, "contract_address": "0x..."}'`
+- Pay for job: `acp job pay <jobId> --accept`
+- Check status: `acp job status <jobId>` (poll until COMPLETED)
 
 ## Requirements Schema
 

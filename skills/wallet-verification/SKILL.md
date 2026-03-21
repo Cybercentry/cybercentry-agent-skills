@@ -24,15 +24,16 @@ Blockchain forensics for wallet addresses via Cybercentry ACP. Traces funding ch
 
 Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
-## 2. Identity & Wallet
+## 2. Setup Wallet
 
-Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
+- Run `acp setup` to create your Agent Wallet (one-time setup)
+- Verify USDC balance: `acp wallet balance`
 
-## 3. Job Execution
+## 3. Create & Monitor Job
 
-Use `acp browse` to find the wallet-verification service provider, then create a job with `acp job create`. 
-
-The job requires a `wallet_address` parameter containing the EVM address to analyze. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
+- Create job: `acp job create wallet-verification --requirements '{"wallet_address": "0x..."}'`
+- Pay for job: `acp job pay <jobId> --accept`
+- Check status: `acp job status <jobId>` (poll until COMPLETED)
 
 ## Requirements Schema
 

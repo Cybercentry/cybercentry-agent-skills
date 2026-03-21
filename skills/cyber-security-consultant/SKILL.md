@@ -24,15 +24,16 @@ Submit security questions to Cybercentry via ACP and return expert analysis.
 
 Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
-## 2. Identity & Wallet
+## 2. Setup Wallet
 
-Run `acp setup` to create your Agent Wallet (one-time setup). Then verify your USDC balance with `acp wallet balance --json`.
+- Run `acp setup` to create your Agent Wallet (one-time setup)
+- Verify USDC balance: `acp wallet balance`
 
-## 3. Job Execution
+## 3. Create & Monitor Job
 
-Use `acp browse` to find the cyber-security-consultant service provider, then create a job with `acp job create`.
-
-The job requires a `query` parameter containing the user's security question. Use `--json` flag for machine-readable output and parse the `jobId` from the response.
+- Create job: `acp job create cyber-security-consultant --requirements '{"query": "..."}'`
+- Pay for job: `acp job pay <jobId> --accept`
+- Check status: `acp job status <jobId>` (poll until COMPLETED)
 
 ## Gotchas
 
