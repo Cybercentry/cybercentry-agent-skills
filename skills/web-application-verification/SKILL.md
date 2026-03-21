@@ -9,14 +9,14 @@ metadata:
 
 # Web Application Verification
 
-OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS, insecure APIs, frontend vulnerabilities.
+OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS, insecure APIs, and frontend vulnerabilities.
 
 ## Workflow
 
 - [ ] Step 1: Verify ACP CLI is installed
 - [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create job with target URL
-- [ ] Step 4: Pay for job
+- [ ] Step 3: Create a job with the target URL
+- [ ] Step 4: Pay for the job
 - [ ] Step 5: Poll status until COMPLETED
 - [ ] Step 6: Return security report to user
 
@@ -49,4 +49,4 @@ acp job create $(acp browse "web-application-verification" --json | jq -r '.[0].
 - `target_url` must include the protocol (`https://` or `http://`).
 - The URL must be publicly accessible for scanning.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
