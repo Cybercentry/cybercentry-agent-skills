@@ -6,7 +6,7 @@ A comprehensive collection of security and verification skills for AI agents int
 
 This repository contains 9 specialized skills designed to provide AI agents with access to advanced security analysis, blockchain forensics, code verification, and cryptographic services. All skills are executed through the Cybercentry ACP infrastructure and follow a consistent job-based workflow pattern.
 
-## Quick Start
+## Quick Start Example
 
 1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
 2. Run `acp setup` (one-time only)
