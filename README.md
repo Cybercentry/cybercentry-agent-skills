@@ -75,30 +75,6 @@ cybercentry-agent-skills/
         └── SKILL.md
 ```
 
-# 3. Poll Until Complete
-while true; do
-  STATUS=$(acp job status $JOB_ID --json | jq -r '.status')
-  if [ "$STATUS" = "COMPLETED" ]; then
-    acp job status $JOB_ID --json | jq '.result'
-    break
-  fi
-  sleep 5
-done
-```
-
-## Global Requirements
-
-**Agent Wallet Address** (Fixed): `0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63`
-
-**Common Gotchas** (across all skills):
-- Always use `--json` flag for machine-readable output
-- Parse `jobId` from the create job response
-- Use the fixed wallet address - do not use `acp browse`
-- Escape special characters in string values for valid JSON
-- Numbers (chain_id, platform_id) should not be quoted in JSON
-- Poll every 5 seconds for job status updates
-- Most jobs complete within 30 seconds
-
 ## License
 
 All skills are licensed under MIT. See individual SKILL.md files for details.
@@ -106,60 +82,5 @@ All skills are licensed under MIT. See individual SKILL.md files for details.
 ## Author
 
 Cybercentry - Advanced Security & Verification Infrastructure
-
-## Repository Structure
-
-```
-cybercentry-agent-skills/
-├── LICENSE.md
-├── README.md
-└── skills/
-    ├── cyber-security-consultant/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── ethereum-token-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── openclaw-ai-agent-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── private-data-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── quantum-cryptography-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── solana-token-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── solidity-code-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    ├── wallet-verification/
-    │   ├── evals/
-    │   │   └── evals.json
-    │   └── SKILL.md
-    └── web-application-verification/
-        ├── evals/
-        │   └── evals.json
-        └── SKILL.md
-```
-
-## Getting Started
-
-1. Choose a skill from the directory above
-2. Read the corresponding `SKILL.md` file for detailed documentation
-3. Follow the "General Job Workflow" pattern
-4. Replace placeholders with your actual data
-5. Parse JSON responses for results
-
----
 
 For more information, visit individual skill documentation files in the `/skills` directory.
