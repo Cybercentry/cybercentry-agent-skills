@@ -35,7 +35,7 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## Gotchas
 
-- The `query` field must be a sanitised string. Remove any special characters that could break JSON parsing.
-- Always use `--json` flag for machine-readable output. Parse the `jobId` from the create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
-- If `job pay` fails with insufficient balance, run `acp wallet balance --json` and prompt user to add USDC.
+- `query` field must be a sanitized string - escape special characters that could break JSON parsing
+- `acp job create` returns JSON with `jobId` - extract this to poll for status
+- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
+- Job creation requires sufficient USDC balance - check with `acp wallet balance` if job fails

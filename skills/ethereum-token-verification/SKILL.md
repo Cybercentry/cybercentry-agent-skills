@@ -124,8 +124,9 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## Gotchas
 
-- `chain_id` and `platform_id` are numbers, not strings. Do not quote them in the JSON.
-- `contract_address` must include the `0x` prefix for EVM addresses.
-- For BuildBear testnets, use the unique testnet identifier from the explorer URL as `chain_id` (e.g., `"Accepted_Mace_Windu_2561384"`).
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `chain_id` and `platform_id` are numbers, not strings - do not quote them
+- `contract_address` must include the `0x` prefix
+- For BuildBear testnets, use the unique testnet identifier from the explorer URL as `chain_id`
+- `acp job create` returns JSON with `jobId` - extract this to poll for status
+- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
+- Job creation requires sufficient USDC balance - will fail silently if insufficient funds

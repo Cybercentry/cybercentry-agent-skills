@@ -48,8 +48,9 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 ## Gotchas
 
-- `config` is required. Pass the openclaw.json content or an empty object `{}`.
-- `tool.args` must be an object, even if empty. Use `{}` not `null`.
-- Large skills content should be stringified JSON, not raw markdown.
-- Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
+- `config` is required - pass the openclaw.json content or an empty object `{}`
+- `tool.args` must be an object, even if empty - use `{}` not `null`
+- Large skills content should be stringified JSON, not raw markdown
+- `acp job create` returns JSON with `jobId` - extract this to poll for status
+- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
+- Job creation requires sufficient USDC balance - will fail silently if insufficient funds
