@@ -1,10 +1,10 @@
 # Cybercentry Agent Skills
 
-A comprehensive collection of security and verification skills for AI agents integrating with the Cybercentry platform via the ACP (Agent Coordination Protocol) CLI.
+A comprehensive collection of security and verification skills for AI agents integrating with the Cybercentry platform via the Virtuals Protocol, ACP (Agent Commerce Protocol) CLI.
 
 ## Overview
 
-This repository contains 9 specialized skills designed to provide AI agents with access to advanced security analysis, blockchain forensics, code verification, and cryptographic services. All skills are executed through the Cybercentry ACP infrastructure and follow a consistent job-based workflow.
+This repository contains 9 specialised skills designed to provide AI agents with access to advanced security analysis, blockchain forensics, code verification, and cryptographic services. All skills are executed through the Cybercentry ACP infrastructure and follow a consistent job-based workflow.
 
 ## Quick Start
 
@@ -30,7 +30,7 @@ This repository contains 9 specialized skills designed to provide AI agents with
 
 ### General Job Workflow
 
-All skills follow this standardized workflow:
+All skills follow this standardised workflow:
 
 1. **Verify ACP CLI** is installed and available
 2. **Check Wallet** has sufficient USDC balance
@@ -77,7 +77,7 @@ All skills follow this standardized workflow:
 - Scan for rug pulls
 - Detect hidden taxes
 - Assess liquidity risks
-- Analyze holder distribution
+- Analyse holder distribution
 - Evaluate tokens before investment
 
 **Requirements**:
@@ -199,7 +199,7 @@ All skills follow this standardized workflow:
 - Scan for rug pulls
 - Detect hidden taxes
 - Assess liquidity risks
-- Analyze holder distribution
+- Analyse holder distribution
 - Gate-check tokens in automated pipelines
 
 **Requirements**:
@@ -321,7 +321,7 @@ done
 - Escape special characters in string values for valid JSON
 - Numbers (chain_id, platform_id) should not be quoted in JSON
 - Poll every 5 seconds for job status updates
-- Most jobs complete within 30 seconds
+- Most jobs are completed within 30 seconds
 
 ## License
 
