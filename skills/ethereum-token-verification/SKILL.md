@@ -112,6 +112,3 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 - `chain_id` and `platform_id` are numbers, not strings - do not quote them
 - `contract_address` must include the `0x` prefix
 - For BuildBear testnets, use the unique testnet identifier from the explorer URL as `chain_id`
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds

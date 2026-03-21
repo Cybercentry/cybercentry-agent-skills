@@ -29,6 +29,3 @@ Verify Solana token contracts for security risks via Cybercentry ACP with Rust S
 
 - Solana addresses are base58-encoded, not hex - do not add `0x` prefix
 - Address is typically 32-44 characters long
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds

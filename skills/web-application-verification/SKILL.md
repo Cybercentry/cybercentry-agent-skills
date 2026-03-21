@@ -29,6 +29,3 @@ OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS,
 
 - `target_url` must include the protocol (`https://` or `http://`)
 - URL must be publicly accessible for scanning
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds

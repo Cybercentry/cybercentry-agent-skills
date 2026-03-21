@@ -29,7 +29,4 @@ Analyse Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medi
 
 - Escape double quotes and newlines in Solidity code for valid JSON
 - For multi-file contracts, concatenate all files into a single string
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5-10 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds
-- Execution time averages < 2 minutes but can take up to 5 minutes
+- Execution time typically < 2 minutes but can take up to 5 minutes

@@ -29,6 +29,3 @@ Encrypt data with quantum-resistant AES-256-GCM via Cybercentry ACP. Returns rec
 
 - `cqcv_data` must be a plain string - escape special characters that could break JSON parsing
 - Response contains `record_id` and `decrypt_url` for future data retrieval
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds

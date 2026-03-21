@@ -22,6 +22,3 @@ Submit security questions to Cybercentry via ACP and return expert analysis.
 ## Gotchas
 
 - `query` field must be a sanitised string - escape special characters that could break JSON parsing
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - check with `acp wallet balance` if job fails

@@ -29,6 +29,3 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 
 - `cpdv_data` must be a plain string - escape special characters that could break JSON parsing
 - Response contains `proof_id` and `proof_url` for verification retrieval
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds

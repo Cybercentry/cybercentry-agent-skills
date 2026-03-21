@@ -36,6 +36,3 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 - `config` is required - pass the openclaw.json content or an empty object `{}`
 - `tool.args` must be an object, even if empty - use `{}` not `null`
 - Large skills content should be stringified JSON, not raw markdown
-- `acp job create` returns JSON with `jobId` - extract this to poll for status
-- `acp job status <jobId>` requires polling (check every 5 seconds) until `"status": "COMPLETED"`
-- Job creation requires sufficient USDC balance - will fail silently if insufficient funds
