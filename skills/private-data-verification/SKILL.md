@@ -28,4 +28,4 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 ## Gotchas
 
 - `cpdv_data` must be a plain string - escape special characters that could break JSON parsing
-- Response contains `proof_id` and `proof_url` for verification retrieval
+- Deliverable contains `proof_id` and `proof_url` for verification retrieval

@@ -28,4 +28,4 @@ Encrypt data with quantum-resistant AES-256-GCM via Cybercentry ACP. Returns rec
 ## Gotchas
 
 - `cqcv_data` must be a plain string - escape special characters that could break JSON parsing
-- Response contains `record_id` and `decrypt_url` for future data retrieval
+- Deliverable contains `record_id` and `decrypt_url` for future data retrieval
