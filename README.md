@@ -8,95 +8,27 @@ This repository contains 9 specialized skills designed to provide AI agents with
 
 ## Quick Start
 
-### Prerequisites
+1. Install ACP CLI: `git clone https://github.com/Virtual-Protocol/openclaw-acp && cd openclaw-acp && npm install && npm link`
+2. Run `acp setup` (one-time only)
+3. For any skill, run `acp browse "Cybercentry"` to find the provider wallet
+4. Create a job with skill-specific requirements
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
-1. **ACP CLI Installation**
-   ```bash
-   git clone https://github.com/Virtual-Protocol/openclaw-acp
-   cd openclaw-acp
-   npm install
-   npm link
-   ```
+Each skill's SKILL.md contains the specific workflow and requirements.
 
-2. **Agent Wallet Setup**
-   ```bash
-   acp setup                      # Create Agent Wallet (one-time)
-   acp wallet balance --json      # Verify USDC balance
-   ```
+## Skills
 
-3. **Sufficient USDC Balance**
-   - Each skill execution requires USDC payment
-   - Check balance: `acp wallet balance --json`
-
-### General Job Workflow
-
-All skills follow this standardized workflow:
-All skills follow this standardised workflow:
-
-1. **Verify ACP CLI** is installed and available
-2. **Check Wallet** has sufficient USDC balance
-3. **Create Job** with skill-specific requirements
-4. **Pay for Job** using ACP payment system
-5. **Poll Status** until job reaches COMPLETED state
-6. **Return Results** to user
-
-**Standard Polling**: Every 5 seconds | **Typical Completion**: 30 seconds
-
----
-
-## Skills Directory
-
-### 1. Cyber Security Consultant
-
-**Purpose**: General security expertise and threat analysis
-
-**When to Use**:
-- Threat intelligence queries
-- Vulnerability assessment and analysis
-- Compliance guidance and audits
-- Incident response advice
-- CVE research and attack vector analysis
-- Defense strategy recommendations
-
-**Requirements**:
-```json
-{
-  "query": "Your security question here"
-}
-```
-
-**Setup**: `/skills/cyber-security-consultant/SKILL.md`
-
----
-
-### 2. Ethereum Token Verification
-
-**Purpose**: EVM token contract security analysis supporting 44+ blockchain explorers
-
-**When to Use**:
-- Verify token legitimacy
-- Scan for rug pulls
-- Detect hidden taxes
-- Assess liquidity risks
-- Analyze holder distribution
-- Evaluate tokens before investment
-
-**Requirements**:
-```json
-{
-  "chain_id": 1,
-  "platform_id": 1,
-  "contract_address": "0x4ee38aa8d7449a177119e983610D73e9ace932dA"
-}
-```
-
-**Chain & Platform Support**: See `/skills/ethereum-token-verification/SKILL.md` for complete list of 27+ chains and 45+ blockchain explorers
-
-**Special Note**: BuildBear testnets use custom testnet identifiers as `chain_id`
-
-**Setup**: `/skills/ethereum-token-verification/SKILL.md`
-
----
+| Skill | Purpose | Documentation |
+|-------|---------|-----------------|
+| Cyber Security Consultant | General security expertise and threat analysis | `/skills/cyber-security-consultant/SKILL.md` |
+| Ethereum Token Verification | EVM token contract security analysis | `/skills/ethereum-token-verification/SKILL.md` |
+| OpenClaw AI Agent Verification | Audit AI agent configurations for security | `/skills/openclaw-ai-agent-verification/SKILL.md` |
+| Private Data Verification | Zero-Knowledge Proofs for data integrity | `/skills/private-data-verification/SKILL.md` |
+| Quantum Cryptography Verification | Quantum-resistant encryption | `/skills/quantum-cryptography-verification/SKILL.md` |
+| Solana Token Verification | Solana token contract security analysis | `/skills/solana-token-verification/SKILL.md` |
+| Solidity Code Verification | Solidity smart contract security analysis | `/skills/solidity-code-verification/SKILL.md` |
+| Wallet Verification | Blockchain forensics and wallet risk assessment | `/skills/wallet-verification/SKILL.md` |
+| Web Application Verification | OWASP security scanning for websites and dApps | `/skills/web-application-verification/SKILL.md` |
 
 ### 3. OpenClaw AI Agent Verification
 

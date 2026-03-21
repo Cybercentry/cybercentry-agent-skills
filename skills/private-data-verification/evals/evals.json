@@ -3,32 +3,38 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "I need to prove I logged in at 2pm today without revealing my password. Can you create a ZKP for that?",
-      "expected_output": "Zero-Knowledge Proof generated for the login claim with proof_id and proof_url.",
+      "prompt": "Generate ZKP for login verification",
+      "requirements": {
+        "cpdv_data": "user_id_12345"
+      },
+      "expected_output": "Proof ID and verification URL",
       "assertions": [
-        "A proof_id is returned",
-        "A proof_url is provided for verification",
-        "The proof does not expose the underlying credentials"
+        "proof_id field is present",
+        "proof_url field is present"
       ]
     },
     {
       "id": 2,
-      "prompt": "Generate a cryptographic proof that I own this email address: user@example.com",
-      "expected_output": "ZKP proving email ownership without exposing sensitive verification details.",
+      "prompt": "Create privacy-preserving proof of account ownership",
+      "requirements": {
+        "cpdv_data": "account_hash_abcdef123456"
+      },
+      "expected_output": "Proof ID and verification URL",
       "assertions": [
-        "A verifiable proof is generated",
-        "The proof_id is included in the response",
-        "The proof can be independently verified via the URL"
+        "proof_id field is present",
+        "proof_url field is present"
       ]
     },
     {
       "id": 3,
-      "prompt": "I want to verify my identity claim to a third party without sharing my personal data",
-      "expected_output": "Privacy-preserving proof of identity claim with verification mechanism.",
+      "prompt": "Generate confidential transaction verification proof",
+      "requirements": {
+        "cpdv_data": "transaction_data_xyz789"
+      },
+      "expected_output": "Proof ID and verification URL",
       "assertions": [
-        "The response explains the ZKP approach",
-        "A proof_id and proof_url are provided",
-        "No personal data is exposed in the proof"
+        "proof_id field is present",
+        "proof_url field is present"
       ]
     }
   ]

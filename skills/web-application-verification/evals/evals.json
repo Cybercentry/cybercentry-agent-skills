@@ -3,32 +3,38 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Scan my website for security vulnerabilities: https://example.com",
-      "expected_output": "OWASP security scan results with identified vulnerabilities and remediation guidance.",
+      "prompt": "Scan website for security vulnerabilities",
+      "requirements": {
+        "target_url": "https://example.com"
+      },
+      "expected_output": "Security report URL",
       "assertions": [
-        "XSS vulnerabilities are checked",
-        "API security is assessed",
-        "Findings include severity levels"
+        "report_url field is present",
+        "Scan complete"
       ]
     },
     {
       "id": 2,
-      "prompt": "Check if this dApp frontend is secure before we launch: https://mydapp.io",
-      "expected_output": "Security assessment of the dApp frontend with Web3-specific vulnerability analysis.",
+      "prompt": "Check dApp frontend for OWASP vulnerabilities",
+      "requirements": {
+        "target_url": "https://dapp.example.com"
+      },
+      "expected_output": "Security report URL",
       "assertions": [
-        "Frontend vulnerabilities are identified",
-        "Web3-specific risks are evaluated",
-        "Launch readiness is assessed"
+        "report_url field is present",
+        "dApp analysed"
       ]
     },
     {
       "id": 3,
-      "prompt": "Is this website vulnerable to XSS attacks? https://testsite.com",
-      "expected_output": "XSS vulnerability analysis with specific findings and mitigation steps.",
+      "prompt": "Audit web application for insecure API endpoints",
+      "requirements": {
+        "target_url": "https://api.example.com"
+      },
+      "expected_output": "Security report URL",
       "assertions": [
-        "XSS testing is performed",
-        "Specific XSS vectors are checked",
-        "Remediation steps are provided if vulnerabilities found"
+        "report_url field is present",
+        "API audit complete"
       ]
     }
   ]
