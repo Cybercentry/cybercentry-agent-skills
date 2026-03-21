@@ -16,8 +16,8 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 - [ ] Step 1: Verify ACP CLI is installed
 - [ ] Step 2: Verify wallet has USDC balance
 - [ ] Step 3: Gather agent config, tool, skills, and message data
-- [ ] Step 4: Create job with verification payload
-- [ ] Step 5: Pay for job
+- [ ] Step 4: Create a job with a verification payload
+- [ ] Step 5: Pay for the job
 - [ ] Step 6: Poll status until COMPLETED
 - [ ] Step 7: Return risk assessment to user
 
@@ -57,4 +57,4 @@ acp job create $(acp browse "openclaw-ai-agent-verification" --json | jq -r '.[0
 - `tool.args` must be an object, even if empty. Use `{}` not `null`.
 - Large skills content should be stringified JSON, not raw markdown.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
