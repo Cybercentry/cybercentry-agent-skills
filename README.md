@@ -68,57 +68,7 @@ All skills follow this standardized workflow:
 
 ---
 
-### 2. Wallet Verification
-
-**Purpose**: Blockchain forensics and wallet risk assessment across 30+ EVM chains
-
-**When to Use**:
-- Investigate wallet funding sources
-- Sanctions compliance screening
-- Detect money laundering patterns
-- Identify bot automation
-- Assess wallet trustworthiness
-- Evaluate counterparty risk
-
-**Requirements**:
-```json
-{
-  "wallet_address": "0x1234567890abcdef..."
-}
-```
-
-**Supported Networks**: 30+ EVM chains including Ethereum, BSC, Polygon, Avalanche, Arbitrum, Optimism, Sonic, and more
-
-**Setup**: `/skills/wallet-verification/SKILL.md`
-
----
-
-### 3. Solidity Code Verification
-
-**Purpose**: Security analysis of Solidity smart contracts with High/Medium/Low/Informational risk levels
-
-**When to Use**:
-- Audit Solidity contracts before deployment
-- Identify re-entrancy bugs
-- Detect access control issues
-- Review unsafe external calls
-- Gate-check contracts in transaction pipelines
-- Perform security assessments
-
-**Requirements**:
-```json
-{
-  "solidity_code": "contract MyContract { ... }"
-}
-```
-
-**Typical Execution Time**: < 2 minutes
-
-**Setup**: `/skills/solidity-code-verification/SKILL.md`
-
----
-
-### 4. Ethereum Token Verification
+### 2. Ethereum Token Verification
 
 **Purpose**: EVM token contract security analysis supporting 44+ blockchain explorers
 
@@ -147,109 +97,7 @@ All skills follow this standardized workflow:
 
 ---
 
-### 5. Solana Token Verification
-
-**Purpose**: Solana token contract security analysis with Rust Scan AI detection
-
-**When to Use**:
-- Verify Solana token legitimacy
-- Scan for rug pulls
-- Detect hidden taxes
-- Assess liquidity risks
-- Analyze holder distribution
-- Gate-check tokens in automated pipelines
-
-**Requirements**:
-```json
-{
-  "contract_address": "Gx5dX1pM5aCQn8wtXEmEHSUia3W57Jq7qdu7kKsHvirt"
-}
-```
-
-**Address Format**: Base58-encoded (32-44 characters, no `0x` prefix)
-
-**Setup**: `/skills/solana-token-verification/SKILL.md`
-
----
-
-### 6. Web Application Verification
-
-**Purpose**: OWASP security scanning for websites and dApps with XSS and API vulnerability detection
-
-**When to Use**:
-- Find XSS vulnerabilities
-- Identify insecure APIs
-- Assess frontend security
-- Evaluate web application vulnerabilities
-- Secure dApp frontends
-- Perform OWASP compliance checks
-
-**Requirements**:
-```json
-{
-  "target_url": "https://example.com"
-}
-```
-
-**Important**: URL must include protocol (`https://` or `http://`) and be publicly accessible
-
-**Setup**: `/skills/web-application-verification/SKILL.md`
-
----
-
-### 7. Private Data Verification
-
-**Purpose**: Zero-Knowledge Proofs for data integrity validation
-
-**When to Use**:
-- Verify identity claims without exposure
-- Prove login status
-- Create trustless proof of action
-- Validate sensitive data authenticity
-- Privacy-preserving verification in Web3
-- Generate cryptographic proof receipts
-
-**Requirements**:
-```json
-{
-  "cpdv_data": "Your private data here"
-}
-```
-
-**Response**: Returns `proof_id` and `proof_url` for verification retrieval
-
-**Setup**: `/skills/private-data-verification/SKILL.md`
-
----
-
-### 8. Quantum Cryptography Verification
-
-**Purpose**: Quantum-resistant AES-256-GCM encryption for sensitive data
-
-**When to Use**:
-- Encrypt sensitive data
-- Protect against future quantum attacks
-- Store confidential information securely
-- Archive restricted access data
-- Create encrypted records for Web3
-- Secure data with quantum-safe cryptography
-
-**Requirements**:
-```json
-{
-  "cqcv_data": "Data to encrypt"
-}
-```
-
-**Response**: Returns `record_id` and `decrypt_url` for future data retrieval
-
-**Encryption**: AES-256-GCM (quantum-resistant algorithm)
-
-**Setup**: `/skills/quantum-cryptography-verification/SKILL.md`
-
----
-
-### 9. OpenClaw AI Agent Verification
+### 3. OpenClaw AI Agent Verification
 
 **Purpose**: Audit AI agent configurations for security risks with Critical/High/Medium/Low assessment
 
@@ -287,6 +135,158 @@ All skills follow this standardized workflow:
 - `sessionId` - Conversation context tracking
 
 **Setup**: `/skills/openclaw-ai-agent-verification/SKILL.md`
+
+---
+
+### 4. Private Data Verification
+
+**Purpose**: Zero-Knowledge Proofs for data integrity validation
+
+**When to Use**:
+- Verify identity claims without exposure
+- Prove login status
+- Create trustless proof of action
+- Validate sensitive data authenticity
+- Privacy-preserving verification in Web3
+- Generate cryptographic proof receipts
+
+**Requirements**:
+```json
+{
+  "cpdv_data": "Your private data here"
+}
+```
+
+**Response**: Returns `proof_id` and `proof_url` for verification retrieval
+
+**Setup**: `/skills/private-data-verification/SKILL.md`
+
+---
+
+### 5. Quantum Cryptography Verification
+
+**Purpose**: Quantum-resistant AES-256-GCM encryption for sensitive data
+
+**When to Use**:
+- Encrypt sensitive data
+- Protect against future quantum attacks
+- Store confidential information securely
+- Archive restricted access data
+- Create encrypted records for Web3
+- Secure data with quantum-safe cryptography
+
+**Requirements**:
+```json
+{
+  "cqcv_data": "Data to encrypt"
+}
+```
+
+**Response**: Returns `record_id` and `decrypt_url` for future data retrieval
+
+**Encryption**: AES-256-GCM (quantum-resistant algorithm)
+
+**Setup**: `/skills/quantum-cryptography-verification/SKILL.md`
+
+---
+
+### 6. Solana Token Verification
+
+**Purpose**: Solana token contract security analysis with Rust Scan AI detection
+
+**When to Use**:
+- Verify Solana token legitimacy
+- Scan for rug pulls
+- Detect hidden taxes
+- Assess liquidity risks
+- Analyze holder distribution
+- Gate-check tokens in automated pipelines
+
+**Requirements**:
+```json
+{
+  "contract_address": "Gx5dX1pM5aCQn8wtXEmEHSUia3W57Jq7qdu7kKsHvirt"
+}
+```
+
+**Address Format**: Base58-encoded (32-44 characters, no `0x` prefix)
+
+**Setup**: `/skills/solana-token-verification/SKILL.md`
+
+---
+
+### 7. Solidity Code Verification
+
+**Purpose**: Security analysis of Solidity smart contracts with High/Medium/Low/Informational risk levels
+
+**When to Use**:
+- Audit Solidity contracts before deployment
+- Identify re-entrancy bugs
+- Detect access control issues
+- Review unsafe external calls
+- Gate-check contracts in transaction pipelines
+- Perform security assessments
+
+**Requirements**:
+```json
+{
+  "solidity_code": "contract MyContract { ... }"
+}
+```
+
+**Typical Execution Time**: < 2 minutes
+
+**Setup**: `/skills/solidity-code-verification/SKILL.md`
+
+---
+
+### 8. Wallet Verification
+
+**Purpose**: Blockchain forensics and wallet risk assessment across 30+ EVM chains
+
+**When to Use**:
+- Investigate wallet funding sources
+- Sanctions compliance screening
+- Detect money laundering patterns
+- Identify bot automation
+- Assess wallet trustworthiness
+- Evaluate counterparty risk
+
+**Requirements**:
+```json
+{
+  "wallet_address": "0x1234567890abcdef..."
+}
+```
+
+**Supported Networks**: 30+ EVM chains including Ethereum, BSC, Polygon, Avalanche, Arbitrum, Optimism, Sonic, and more
+
+**Setup**: `/skills/wallet-verification/SKILL.md`
+
+---
+
+### 9. Web Application Verification
+
+**Purpose**: OWASP security scanning for websites and dApps with XSS and API vulnerability detection
+
+**When to Use**:
+- Find XSS vulnerabilities
+- Identify insecure APIs
+- Assess frontend security
+- Evaluate web application vulnerabilities
+- Secure dApp frontends
+- Perform OWASP compliance checks
+
+**Requirements**:
+```json
+{
+  "target_url": "https://example.com"
+}
+```
+
+**Important**: URL must include protocol (`https://` or `http://`) and be publicly accessible
+
+**Setup**: `/skills/web-application-verification/SKILL.md`
 
 ---
 
