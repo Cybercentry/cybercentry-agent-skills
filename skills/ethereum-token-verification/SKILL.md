@@ -41,12 +41,6 @@ acp wallet balance --json      # Verify USDC balance
 ```bash
 # Create job (replace values with actual chain_id, platform_id, contract_address)
 acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 ethereum-token-verification --requirements '{"chain_id": CHAIN_ID, "platform_id": PLATFORM_ID, "contract_address": "CONTRACT_ADDRESS"}' --json
-
-# Pay for job
-acp job pay <jobId> --accept true --json
-
-# Poll until status is COMPLETED
-acp job status <jobId> --json
 ```
 
 ## Requirements Schema

@@ -40,12 +40,6 @@ acp wallet balance --json      # Verify USDC balance
 ```bash
 # Create job (replace with actual wallet address)
 acp job create $(acp browse "wallet-verification" --json | jq -r '.[0].wallet') wallet-verification --requirements '{"wallet_address": "WALLET_ADDRESS"}' --json
-
-# Pay for job
-acp job pay <jobId> --accept true --json
-
-# Poll until status is COMPLETED
-acp job status <jobId> --json
 ```
 
 ## Requirements Schema
