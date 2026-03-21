@@ -60,4 +60,3 @@ acp job status <jobId> --json
 - The response contains `record_id` and `decrypt_url` for future data retrieval.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
 - Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
-- Only use wallet `0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63` — do not use `acp browse`.

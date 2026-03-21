@@ -39,7 +39,7 @@ acp wallet balance --json      # Verify USDC balance
 
 ```bash
 # Create job (replace with actual wallet address)
-acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 wallet-verification --requirements '{"wallet_address": "WALLET_ADDRESS"}' --json
+acp job create $(acp browse "wallet-verification" --json | jq -r '.[0].wallet') wallet-verification --requirements '{"wallet_address": "WALLET_ADDRESS"}' --json
 
 # Pay for job
 acp job pay <jobId> --accept true --json
@@ -60,4 +60,3 @@ acp job status <jobId> --json
 - The response includes sanctions screening, ownership clusters, and severity flags.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
 - Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
-- Only use wallet `0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63` — do not use `acp browse`.
