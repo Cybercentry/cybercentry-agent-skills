@@ -8,13 +8,13 @@ This repository contains 9 specialized skills designed to provide AI agents with
 
 ## Quick Start
 
-1. Install ACP CLI: `git clone https://github.com/Virtual-Protocol/openclaw-acp && cd openclaw-acp && npm install && npm link`
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
 2. Run `acp setup` (one-time only)
-3. Run `acp browse "Cybercentry"` to find the provider wallet address
-4. Run `acp job create <wallet> <skill-name> --requirements '{"param": "value"}'` with skill-specific parameters
-5. Poll `acp job status <jobId>` until status is `COMPLETED`
+3. Run `acp browse "Cybercentry"` to find provider wallet
+4. Run `acp job create <wallet> cyber-security-consultant --requirements '{"query": "..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
-Each skill's SKILL.md contains the exact workflow and required parameters.
+Each skill's SKILL.md contains the exact workflow and required parameters for that skill.
 
 ## Skills
 
