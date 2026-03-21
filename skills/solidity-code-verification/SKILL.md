@@ -37,7 +37,7 @@ Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
 | Parameter | Type | Format | Required | Description |
 |-----------|------|--------|----------|-------------|
-| `solidity_code` | String | Plain | Yes | Solidity source code to analyze |
+| `solidity_code` | String | Plain | Yes | Solidity source code to analyse |
 
 ## Gotchas
 
