@@ -15,8 +15,8 @@ Blockchain forensics for wallet addresses via Cybercentry ACP. Traces funding ch
 
 - [ ] Step 1: Verify ACP CLI is installed
 - [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create job with wallet address
-- [ ] Step 4: Pay for job
+- [ ] Step 3: Create a job with a wallet address
+- [ ] Step 4: Pay for the job
 - [ ] Step 5: Poll status until COMPLETED
 - [ ] Step 6: Return forensics report to user
 
@@ -49,4 +49,4 @@ acp job create $(acp browse "wallet-verification" --json | jq -r '.[0].wallet') 
 - `wallet_address` must include the `0x` prefix for EVM addresses.
 - The response includes sanctions screening, ownership clusters, and severity flags.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
