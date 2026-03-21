@@ -13,26 +13,11 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Look up platform_id and chain_id from tables below
-- [ ] Step 4: Create a job with contract details
-- [ ] Step 5: Pay for the job
-- [ ] Step 6: Poll status until COMPLETED
-- [ ] Step 7: Return result to user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Setup
-
-- `acp setup` (one-time only)
-
-## 3. Create Job
-
-- `acp job create ethereum-token-verification --requirements '{"chain_id": 1, "platform_id": 1, "contract_address": "0x..."}'`
-- `acp job status <jobId>`  # Poll until status shows result
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse ethereum-token-verification` to find provider wallet
+4. Run `acp job create <wallet> ethereum-token-verification --requirements '{"chain_id": 1, "platform_id": 1, "contract_address": "0x..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 

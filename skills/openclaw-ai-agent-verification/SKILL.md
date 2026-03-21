@@ -13,26 +13,11 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Gather agent config, tool, skills, and message data
-- [ ] Step 4: Create a job with a verification payload
-- [ ] Step 5: Pay for the job
-- [ ] Step 6: Poll status until COMPLETED
-- [ ] Step 7: Return risk assessment to user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Setup
-
-- `acp setup` (one-time only)
-
-## 3. Create Job
-
-- `acp job create openclaw-ai-agent-verification --requirements '{"tool": {...}, "config": {...}}'`
-- `acp job status <jobId>`  # Poll until status shows result
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse openclaw-ai-agent-verification` to find provider wallet
+4. Run `acp job create <wallet> openclaw-ai-agent-verification --requirements '{"tool": {...}, "config": {...}}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 

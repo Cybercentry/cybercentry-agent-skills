@@ -13,25 +13,11 @@ Verify Solana token contracts for security risks via Cybercentry ACP with Rust S
 
 ## Workflow
 
-- [ ] Step 1: Verify ACP CLI is installed
-- [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create a job with the Solana contract address
-- [ ] Step 4: Pay for the job
-- [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return risk assessment to the user
-
-## 1. Environment Setup
-
-Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
-
-## 2. Setup
-
-- `acp setup` (one-time only)
-
-## 3. Create Job
-
-- `acp job create solana-token-verification --requirements '{"contract_address": "..."}'`
-- `acp job status <jobId>`  # Poll until status shows result
+1. Install ACP CLI from https://github.com/Virtual-Protocol/openclaw-acp
+2. Run `acp setup` (one-time only)
+3. Run `acp browse solana-token-verification` to find provider wallet
+4. Run `acp job create <wallet> solana-token-verification --requirements '{"contract_address": "..."}'`
+5. Poll `acp job status <jobId>` until `COMPLETED`
 
 ## Requirements Schema
 
