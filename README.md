@@ -18,219 +18,62 @@ Each skill's SKILL.md contains the specific workflow and requirements.
 
 ## Skills
 
-| Skill | Purpose | Documentation |
-|-------|---------|-----------------|
-| Cyber Security Consultant | General security expertise and threat analysis | `/skills/cyber-security-consultant/SKILL.md` |
-| Ethereum Token Verification | EVM token contract security analysis | `/skills/ethereum-token-verification/SKILL.md` |
-| OpenClaw AI Agent Verification | Audit AI agent configurations for security | `/skills/openclaw-ai-agent-verification/SKILL.md` |
-| Private Data Verification | Zero-Knowledge Proofs for data integrity | `/skills/private-data-verification/SKILL.md` |
-| Quantum Cryptography Verification | Quantum-resistant encryption | `/skills/quantum-cryptography-verification/SKILL.md` |
-| Solana Token Verification | Solana token contract security analysis | `/skills/solana-token-verification/SKILL.md` |
-| Solidity Code Verification | Solidity smart contract security analysis | `/skills/solidity-code-verification/SKILL.md` |
-| Wallet Verification | Blockchain forensics and wallet risk assessment | `/skills/wallet-verification/SKILL.md` |
-| Web Application Verification | OWASP security scanning for websites and dApps | `/skills/web-application-verification/SKILL.md` |
+| # | Skill | Purpose | Documentation |
+|---|-------|---------|-----------------|
+| 1 | Cyber Security Consultant | General security expertise and threat analysis | `/skills/cyber-security-consultant/SKILL.md` |
+| 2 | Ethereum Token Verification | EVM token contract security analysis | `/skills/ethereum-token-verification/SKILL.md` |
+| 3 | OpenClaw AI Agent Verification | Audit AI agent configurations for security | `/skills/openclaw-ai-agent-verification/SKILL.md` |
+| 4 | Private Data Verification | Zero-Knowledge Proofs for data integrity | `/skills/private-data-verification/SKILL.md` |
+| 5 | Quantum Cryptography Verification | Quantum-resistant encryption | `/skills/quantum-cryptography-verification/SKILL.md` |
+| 6 | Solana Token Verification | Solana token contract security analysis | `/skills/solana-token-verification/SKILL.md` |
+| 7 | Solidity Code Verification | Solidity smart contract security analysis | `/skills/solidity-code-verification/SKILL.md` |
+| 8 | Wallet Verification | Blockchain forensics and wallet risk assessment | `/skills/wallet-verification/SKILL.md` |
+| 9 | Web Application Verification | OWASP security scanning for websites and dApps | `/skills/web-application-verification/SKILL.md` |
 
-### 3. OpenClaw AI Agent Verification
+## Repository Structure
 
-**Purpose**: Audit AI agent configurations for security risks with Critical/High/Medium/Low assessment
-
-**When to Use**:
-- Validate agent tool access
-- Check agent permissions
-- Assess agent message safety
-- Review agent skills
-- Gate-check agents before deployment
-- Detect prompt injection vulnerabilities
-- Evaluate agent orchestration security
-
-**Requirements**:
-```json
-{
-  "tool": {
-    "name": "tool_name",
-    "args": {}
-  },
-  "config": {},
-  "skills": "SKILL.md content or JSON",
-  "message": "Message to validate",
-  "sessionId": "session_id"
-}
 ```
-
-**Required Fields**:
-- `tool.name` (string)
-- `tool.args` (object, can be empty `{}`)
-- `config` (object, can be empty `{}`)
-
-**Optional Fields**:
-- `skills` - Skills content for validation
-- `message` - Message content to validate
-- `sessionId` - Conversation context tracking
-
-**Setup**: `/skills/openclaw-ai-agent-verification/SKILL.md`
-
----
-
-### 4. Private Data Verification
-
-**Purpose**: Zero-Knowledge Proofs for data integrity validation
-
-**When to Use**:
-- Verify identity claims without exposure
-- Prove login status
-- Create trustless proof of action
-- Validate sensitive data authenticity
-- Privacy-preserving verification in Web3
-- Generate cryptographic proof receipts
-
-**Requirements**:
-```json
-{
-  "cpdv_data": "Your private data here"
-}
+cybercentry-agent-skills/
+├── LICENSE.md
+├── README.md
+└── skills/
+    ├── cyber-security-consultant/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── ethereum-token-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── openclaw-ai-agent-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── private-data-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── quantum-cryptography-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── solana-token-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── solidity-code-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    ├── wallet-verification/
+    │   ├── evals/
+    │   │   └── evals.json
+    │   └── SKILL.md
+    └── web-application-verification/
+        ├── evals/
+        │   └── evals.json
+        └── SKILL.md
 ```
-
-**Response**: Returns `proof_id` and `proof_url` for verification retrieval
-
-**Setup**: `/skills/private-data-verification/SKILL.md`
-
----
-
-### 5. Quantum Cryptography Verification
-
-**Purpose**: Quantum-resistant AES-256-GCM encryption for sensitive data
-
-**When to Use**:
-- Encrypt sensitive data
-- Protect against future quantum attacks
-- Store confidential information securely
-- Archive restricted access data
-- Create encrypted records for Web3
-- Secure data with quantum-safe cryptography
-
-**Requirements**:
-```json
-{
-  "cqcv_data": "Data to encrypt"
-}
-```
-
-**Response**: Returns `record_id` and `decrypt_url` for future data retrieval
-
-**Encryption**: AES-256-GCM (quantum-resistant algorithm)
-
-**Setup**: `/skills/quantum-cryptography-verification/SKILL.md`
-
----
-
-### 6. Solana Token Verification
-
-**Purpose**: Solana token contract security analysis with Rust Scan AI detection
-
-**When to Use**:
-- Verify Solana token legitimacy
-- Scan for rug pulls
-- Detect hidden taxes
-- Assess liquidity risks
-- Analyze holder distribution
-- Gate-check tokens in automated pipelines
-
-**Requirements**:
-```json
-{
-  "contract_address": "Gx5dX1pM5aCQn8wtXEmEHSUia3W57Jq7qdu7kKsHvirt"
-}
-```
-
-**Address Format**: Base58-encoded (32-44 characters, no `0x` prefix)
-
-**Setup**: `/skills/solana-token-verification/SKILL.md`
-
----
-
-### 7. Solidity Code Verification
-
-**Purpose**: Security analysis of Solidity smart contracts with High/Medium/Low/Informational risk levels
-
-**When to Use**:
-- Audit Solidity contracts before deployment
-- Identify re-entrancy bugs
-- Detect access control issues
-- Review unsafe external calls
-- Gate-check contracts in transaction pipelines
-- Perform security assessments
-
-**Requirements**:
-```json
-{
-  "solidity_code": "contract MyContract { ... }"
-}
-```
-
-**Typical Execution Time**: < 2 minutes
-
-**Setup**: `/skills/solidity-code-verification/SKILL.md`
-
----
-
-### 8. Wallet Verification
-
-**Purpose**: Blockchain forensics and wallet risk assessment across 30+ EVM chains
-
-**When to Use**:
-- Investigate wallet funding sources
-- Sanctions compliance screening
-- Detect money laundering patterns
-- Identify bot automation
-- Assess wallet trustworthiness
-- Evaluate counterparty risk
-
-**Requirements**:
-```json
-{
-  "wallet_address": "0x1234567890abcdef..."
-}
-```
-
-**Supported Networks**: 30+ EVM chains including Ethereum, BSC, Polygon, Avalanche, Arbitrum, Optimism, Sonic, and more
-
-**Setup**: `/skills/wallet-verification/SKILL.md`
-
----
-
-### 9. Web Application Verification
-
-**Purpose**: OWASP security scanning for websites and dApps with XSS and API vulnerability detection
-
-**When to Use**:
-- Find XSS vulnerabilities
-- Identify insecure APIs
-- Assess frontend security
-- Evaluate web application vulnerabilities
-- Secure dApp frontends
-- Perform OWASP compliance checks
-
-**Requirements**:
-```json
-{
-  "target_url": "https://example.com"
-}
-```
-
-**Important**: URL must include protocol (`https://` or `http://`) and be publicly accessible
-
-**Setup**: `/skills/web-application-verification/SKILL.md`
-
----
-
-## Common Integration Pattern
-
-```bash
-# 1. Create Job
-JOB_ID=$(acp job create 0x228F7097fB812828a2F08EE29bAC0c58f9e0Bb63 <skill-name> --requirements '<json-payload>' --json | jq -r '.jobId')
-
-# 2. Pay for Job
-acp job pay $JOB_ID --accept true --json
 
 # 3. Poll Until Complete
 while true; do
