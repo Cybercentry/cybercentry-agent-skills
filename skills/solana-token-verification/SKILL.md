@@ -1,6 +1,6 @@
 ---
 name: solana-token-verification
-description: "Use this skill when you need to verify Solana token contracts for security. User cases: checking Solana token legitimacy, scanning for rug pulls, detecting hidden taxes, assessing liquidity risks, analyzing holder distribution, evaluating tokens before investment, or gate-checking Solana tokens in automated pipelines."
+description: "Use this skill when you need to verify Solana token contracts for security. User cases: checking Solana token legitimacy, scanning for rug pulls, detecting hidden taxes, assessing liquidity risks, analysing holder distribution, evaluating tokens before investment, or gate-checking Solana tokens in automated pipelines."
 license: MIT
 metadata:
   author: Cybercentry
@@ -15,10 +15,10 @@ Verify Solana token contracts for security risks via Cybercentry ACP with Rust S
 
 - [ ] Step 1: Verify ACP CLI is installed
 - [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create job with Solana contract address
-- [ ] Step 4: Pay for job
+- [ ] Step 3: Create a job with the Solana contract address
+- [ ] Step 4: Pay for the job
 - [ ] Step 5: Poll status until COMPLETED
-- [ ] Step 6: Return risk assessment to user
+- [ ] Step 6: Return risk assessment to the user
 
 ## 1. Environment Setup
 
@@ -49,4 +49,4 @@ acp job create $(acp browse "solana-token-verification" --json | jq -r '.[0].wal
 - Solana addresses are base58-encoded, not hex. Do not add `0x` prefix.
 - The address is typically 32-44 characters long.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
-- Poll `job status` every 5 seconds. Job typically completes within 30 seconds.
+- Poll `job status` every 5 seconds. The job typically completes within 5 minutes.
