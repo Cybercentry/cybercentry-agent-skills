@@ -9,16 +9,16 @@ metadata:
 
 # Solidity Code Verification
 
-Analyze Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medium/Low/Informational risk level.
+Analyse Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medium/Low/Informational risk level.
 
 ## Workflow
 
 - [ ] Step 1: Verify ACP CLI is installed
 - [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create job with Solidity code
-- [ ] Step 4: Pay for job
+- [ ] Step 3: Create a job with Solidity code
+- [ ] Step 4: Pay for the job
 - [ ] Step 5: Poll status until COMPLETED (typically < 2 minutes)
-- [ ] Step 6: Return risk assessment to user
+- [ ] Step 6: Return risk assessment to the user
 
 ## 1. Environment Setup
 
@@ -48,5 +48,5 @@ acp job create $(acp browse "solidity-code-verification" --json | jq -r '.[0].wa
 
 - Escape double quotes and newlines in the Solidity code for valid JSON.
 - For multi-file contracts, concatenate all files into a single string.
-- Execution time averages under 2 minutes. Poll every 10 seconds for this job.
+- Execution time averages under 5 minutes. Poll every 10 seconds for this job.
 - Always use `--json` flag for machine-readable output. Parse `jobId` from create response.
