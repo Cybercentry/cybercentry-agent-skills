@@ -24,16 +24,14 @@ Analyse Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medi
 
 Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
-## 2. Setup Wallet
+## 2. Setup
 
-- Run `acp setup` to create your Agent Wallet (one-time setup)
-- Verify USDC balance: `acp wallet balance`
+- `acp setup` (one-time only)
 
-## 3. Create & Monitor Job
+## 3. Create Job
 
-- Create job: `acp job create solidity-code-verification --requirements '{"solidity_code": "..."}'`
-- Pay for job: `acp job pay <jobId> --accept`
-- Check status: `acp job status <jobId>` (poll until COMPLETED)
+- `acp job create solidity-code-verification --requirements '{"solidity_code": "..."}'`
+- `acp job status <jobId>`  # Poll until status shows result
 
 ## Requirements Schema
 

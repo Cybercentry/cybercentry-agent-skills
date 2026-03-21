@@ -24,16 +24,14 @@ Encrypt data with quantum-resistant AES-256-GCM via Cybercentry ACP. Returns rec
 
 Install the skill from https://github.com/Virtual-Protocol/openclaw-acp
 
-## 2. Setup Wallet
+## 2. Setup
 
-- Run `acp setup` to create your Agent Wallet (one-time setup)
-- Verify USDC balance: `acp wallet balance`
+- `acp setup` (one-time only)
 
-## 3. Create & Monitor Job
+## 3. Create Job
 
-- Create job: `acp job create quantum-cryptography-verification --requirements '{"cqcv_data": "..."}'`
-- Pay for job: `acp job pay <jobId> --accept`
-- Check status: `acp job status <jobId>` (poll until COMPLETED)
+- `acp job create quantum-cryptography-verification --requirements '{"cqcv_data": "..."}'`
+- `acp job status <jobId>`  # Poll until status shows result
 
 ## Requirements Schema
 
