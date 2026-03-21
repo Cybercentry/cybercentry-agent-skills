@@ -127,8 +127,6 @@ acp job create $(acp browse "ethereum-token-verification" --json | jq -r '.[0].w
 | zksync | 47 |
 | moonscan | 48 |
 
-> **BuildBear note:** For BuildBear private testnets, use the unique testnet identifier from your explorer URL as `chain_id` (e.g., `Accepted_Mace_Windu_2561384` from `https://explorer.buildbear.io/Accepted_Mace_Windu_2561384`)
-
 ## Gotchas
 
 - `chain_id` and `platform_id` are numbers, not strings. Do not quote them in the JSON.
