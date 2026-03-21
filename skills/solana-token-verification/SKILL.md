@@ -27,9 +27,9 @@ Verify Solana token contracts for security risks via Cybercentry ACP with Rust S
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `scan_url` | String | Scan URL |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `scan_url` | String | Plain | Scan URL |
 
 ## Gotchas
 

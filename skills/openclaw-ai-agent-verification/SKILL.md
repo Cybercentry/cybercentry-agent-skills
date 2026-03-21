@@ -33,9 +33,9 @@ Audit AI agent configurations for security risks via Cybercentry ACP. Returns Cr
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `report` | String | Security risk report |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `report` | String | Plain | Security risk report |
 
 ## Gotchas
 

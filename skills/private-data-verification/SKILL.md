@@ -27,10 +27,10 @@ Generate Zero-Knowledge Proofs for data integrity validation via Cybercentry ACP
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `proof_id` | String | ZKP verification ID |
-| `proof_url` | String | ZKP verification URL |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `proof_id` | String | Plain | ZKP verification ID |
+| `proof_url` | String | Plain | ZKP verification URL |
 
 ## Gotchas
 

@@ -27,9 +27,9 @@ Blockchain forensics for wallet addresses via Cybercentry ACP. Traces funding ch
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `report` | String | Forensics report |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `report` | String | Plain | Forensics report |
 
 ## Gotchas
 

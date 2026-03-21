@@ -27,9 +27,9 @@ OWASP security scanning for websites and dApps via Cybercentry ACP. Detects XSS,
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `report_url` | String | Security report URL |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `report_url` | String | Plain | Security report URL |
 
 ## Gotchas
 

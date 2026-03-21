@@ -27,10 +27,10 @@ Analyse Solidity code for vulnerabilities via Cybercentry ACP. Returns High/Medi
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `job_id` | String | Job ID |
-| `overall_risk` | String | Risk level (Informational, Low, Medium, or High) |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `job_id` | String | Plain | Job ID |
+| `overall_risk` | String | Plain | Risk level (Informational, Low, Medium, or High) |
 
 ## Gotchas
 

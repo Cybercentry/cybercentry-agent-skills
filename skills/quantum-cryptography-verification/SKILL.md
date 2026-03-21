@@ -27,10 +27,10 @@ Encrypt data with quantum-resistant AES-256-GCM via Cybercentry ACP. Returns rec
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `record_id` | String | Unique record identifier |
-| `decrypt_url` | String | Secure URL for data retrieval |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `record_id` | String | Plain | Unique record identifier |
+| `decrypt_url` | String | Plain | Secure URL for data retrieval |
 
 ## Gotchas
 

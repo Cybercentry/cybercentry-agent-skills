@@ -27,9 +27,9 @@ Submit security questions to Cybercentry via ACP and return expert analysis.
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `answer` | String | Expert analysis |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `answer` | String | Plain | Expert analysis |
 
 ## Gotchas
 

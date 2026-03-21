@@ -109,9 +109,9 @@ Verify EVM token contracts for security risks via Cybercentry ACP.
 
 ## Deliverables
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `scan_url` | String | Scan URL |
+| Field | Type | Format | Description |
+|-------|------|--------|-------------|
+| `scan_url` | String | Plain | Scan URL |
 
 ## Gotchas
 
