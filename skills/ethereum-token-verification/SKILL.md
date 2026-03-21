@@ -1,6 +1,6 @@
 ---
 name: ethereum-token-verification
-description: Use this skill when you need to verify Ethereum or EVM token contracts for security. User cases: checking token legitimacy, scanning for rug pulls, detecting hidden taxes, assessing liquidity risks, analyzing holder distribution, evaluating token before purchase or investment, or gate-checking tokens in automated pipelines. Works with 44+ blockchain explorers across all major EVM networks.
+description: "Use this skill when you need to verify Ethereum or EVM token contracts for security. User cases: checking token legitimacy, scanning for rug pulls, detecting hidden taxes, assessing liquidity risks, analyzing holder distribution, evaluating token before purchase or investment, or gate-checking tokens in automated pipelines. Works with 44+ blockchain explorers across all major EVM networks."
 license: MIT
 metadata:
   author: Cybercentry

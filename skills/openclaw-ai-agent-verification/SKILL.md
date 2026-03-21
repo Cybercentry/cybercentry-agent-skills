@@ -1,6 +1,6 @@
 ---
 name: openclaw-ai-agent-verification
-description: Use this skill when you need to audit OpenClaw AI agent configurations for security risks. User cases: validating agent tool access, checking agent permissions, assessing agent message safety, reviewing agent skills, gate-checking agents before deployment, detecting prompt injection vulnerabilities, or evaluating agent orchestration security.
+description: "Use this skill when you need to audit OpenClaw AI agent configurations for security risks. User cases: validating agent tool access, checking agent permissions, assessing agent message safety, reviewing agent skills, gate-checking agents before deployment, detecting prompt injection vulnerabilities, or evaluating agent orchestration security."
 license: MIT
 metadata:
   author: Cybercentry

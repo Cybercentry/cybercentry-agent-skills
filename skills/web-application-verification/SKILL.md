@@ -1,6 +1,6 @@
 ---
 name: web-application-verification
-description: Use this skill when you need security scanning for websites or dApps. User cases: finding XSS vulnerabilities, identifying insecure APIs, assessing frontend security, evaluating web application vulnerabilities, securing dApp frontends, or performing OWASP compliance checks on web interfaces.
+description: "Use this skill when you need security scanning for websites or dApps. User cases: finding XSS vulnerabilities, identifying insecure APIs, assessing frontend security, evaluating web application vulnerabilities, securing dApp frontends, or performing OWASP compliance checks on web interfaces."
 license: MIT
 metadata:
   author: Cybercentry

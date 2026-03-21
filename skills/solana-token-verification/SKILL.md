@@ -1,6 +1,6 @@
 ---
 name: solana-token-verification
-description: Use this skill when you need to verify Solana token contracts for security. User cases: checking Solana token legitimacy, scanning for rug pulls, detecting hidden taxes, assessing liquidity risks, analyzing holder distribution, evaluating tokens before investment, or gate-checking Solana tokens in automated pipelines.
+description: "Use this skill when you need to verify Solana token contracts for security. User cases: checking Solana token legitimacy, scanning for rug pulls, detecting hidden taxes, assessing liquidity risks, analyzing holder distribution, evaluating tokens before investment, or gate-checking Solana tokens in automated pipelines."
 license: MIT
 metadata:
   author: Cybercentry
