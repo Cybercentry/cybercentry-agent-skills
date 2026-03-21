@@ -1,6 +1,6 @@
 ---
 name: cyber-security-consultant
-description: "Use this skill when you need security expertise: threat intelligence, vulnerability assessment, compliance guidance, incident response advice, or architecture reviews. Useful for questions about CVEs, attack vectors, defense strategies, security frameworks, risk analysis, breach investigation, or best practices. Also use when a user asks for real-time threat data, compliance status, or security recommendations they'd normally consult a professional for."
+description: "Use this skill when you need security expertise: threat intelligence, vulnerability assessment, compliance guidance, incident response advice, or architecture reviews. Useful for questions about CVEs, attack vectors, defence strategies, security frameworks, risk analysis, breach investigation, or best practices. Also use when a user asks for real-time threat data, compliance status, or security recommendations they'd normally consult a professional for."
 license: MIT
 metadata:
   author: Cybercentry
@@ -15,8 +15,8 @@ Submit security questions to Cybercentry via ACP and return expert analysis.
 
 - [ ] Step 1: Verify ACP CLI is installed (if not, run setup)
 - [ ] Step 2: Verify wallet has USDC balance
-- [ ] Step 3: Create job with user's security question
-- [ ] Step 4: Pay for job
+- [ ] Step 3: Create a job with the user's security question
+- [ ] Step 4: Pay for the job
 - [ ] Step 5: Poll status until COMPLETED
 - [ ] Step 6: Return result to user
 
