@@ -38,40 +38,22 @@ cybercentry-agent-skills/
 ├── README.md
 └── skills/
     ├── cyber-security-consultant/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── ethereum-token-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── openclaw-ai-agent-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── private-data-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── quantum-cryptography-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── solana-token-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── solidity-code-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     ├── wallet-verification/
-    │   ├── evals/
-    │   │   └── evals.json
     │   └── SKILL.md
     └── web-application-verification/
-        ├── evals/
-        │   └── evals.json
         └── SKILL.md
 ```
 
